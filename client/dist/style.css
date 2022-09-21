@@ -1,3 +1,76 @@
 body {
   font-family: sans-serif, arial;
 }
+
+#app {
+  margin: 50px 35vw;
+}
+
+#title {
+  border-bottom: 2px solid black;
+  padding: 25px 10px;
+  margin: 25px 0;
+}
+
+.movie {
+  border: 1px solid grey;
+  margin: 10px 0;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.movie-title {
+  grid-column: 0 1;
+  padding: 5px;
+  margin: 5px;
+}
+
+.movie-button {
+  width:100px;
+  height: 1.25rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  grid-column: 1 2;
+  place-self: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.add-movie-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
+.add-movie-form input {
+  min-width: 50%;
+  height: 1.5rem;
+}
+
+.add-movie-form button {
+  min-width: fit-content;
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 1px;
+
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 50% 50px;
+  column-gap: 5px;
+}
+
+.search-form button {
+  min-width: fit-content;
+  height: 2rem;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.active-tab {
+  background-color: #2ecc71;
+}
