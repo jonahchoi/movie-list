@@ -13,12 +13,22 @@ module.exports = {
   },
 
   post: function(req, res) {
-    console.log('---->', req.body)
     models.create(req.body, (err, data) => {
       if(err) {
         res.sendStatus(404);
       } else {
-        res.sendStatus(201);
+        // console.log(data);
+        res.status(201).json(data);
+      }
+    })
+  },
+
+  put: function(req, res) {
+    models.update(req.body.id, req.body.watched, (err, data) => {
+      if(err) {
+        res.sendStatus(404);
+      } else {
+        res.status(200).json(data);
       }
     })
   }

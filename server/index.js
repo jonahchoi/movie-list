@@ -1,15 +1,16 @@
-const express = require('express');
+var express = require('express');
+var morgan = require('morgan');
+
+var router = require('./routes.js');
+
 const app = express();
 const PORT = 3000 || process.env.PORT;
 
-const controller = require('./controllers/movies.js');
-
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static('client/dist'));
 
-app.get('/api/movies', controller.get);
-
-app.post('/api/movies', controller.post);
+app.use('/api/movies', router);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);

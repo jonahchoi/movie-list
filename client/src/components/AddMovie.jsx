@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
+import Parse from '../parse.js';
 
 const AddMovie = ({setMovieList, movieList}) => {
   const [movieTitle, setMovieTitle] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMovieList([...movieList, {title: movieTitle}]);
+    Parse.create({title: movieTitle}, (data) => {
+      setMovieList(data);
+    });
+    // setMovieList([...movieList, {title: movieTitle}]);
     setMovieTitle('');
   }
 
